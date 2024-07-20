@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 const dotenv = require('dotenv');
+const scoreRoutes = require('./src/routes/apiRoute');
 
 //Load environment variables
 dotenv.config();
@@ -21,9 +22,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 // Routes
-app.get('/', (req, res) => {
-    //
-})
+app.use('/api',scoreRoutes)
 
 // Start server
 app.listen(port, ()=>{
