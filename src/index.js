@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const scoreRoutes = require("./src/routes/apiRoute");
+const scoreRoutes = require("./routes/apiRoute");
 
 //Load environment variables
 dotenv.config();
