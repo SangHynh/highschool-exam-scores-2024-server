@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const hbs = require("express-handlebars");
+const cors = require("cors");
 const dotenv = require("dotenv");
 const scoreRoutes = require("./src/routes/apiRoute");
 
@@ -10,6 +10,11 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+
+// Cors configs
+app.use(cors({
+  origin: process.env.URL_CLIENT
+}))
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
